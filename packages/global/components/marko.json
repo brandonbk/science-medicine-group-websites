@@ -53,5 +53,8 @@
   },
   "<global-content-access-identity-x>": {
     "template": "./content-access-identity-x.marko"
+  },
+  "<global-identity-x-identify>": {
+    "template": "./identify.marko"
   }
 }
