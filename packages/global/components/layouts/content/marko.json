@@ -64,8 +64,11 @@
   "<global-content-wrapper-layout>": {
     "template": "./wrapper.marko",
     "@sections <section>[]": {},
+    "@scroll-depth-selector": "string",
     "@id": "number",
     "@type": "string",
-    "@page-node": "object"
+    "@page-node": "object",
+    "@load-more": "boolean",
+    "@with-ads": "boolean"
   }
 }
