@@ -50,5 +50,8 @@
       "type": "string",
       "required": true
     }
+  },
+  "<global-content-access-identity-x>": {
+    "template": "./content-access-identity-x.marko"
   }
 }
