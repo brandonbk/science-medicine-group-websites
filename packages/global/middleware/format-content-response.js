@@ -12,14 +12,10 @@ const formatContentResponse = ({ res, content }) => {
   };
   if (surveyType === 'idx') {
     const cookieName = `${cookieNamePrefix}_${surveyId}_${content.id}`;
-    const hasCookie = Boolean(get(res, `cookies.${cookieName}`));
-    const hasUser = Boolean(get(res, 'cookies.__idx'));
     const maxAge = days * 24 * 60 * 60 * 1000;
-    const cookie = hasCookie ? get(res, `cookies.${cookieName}`) : { name: cookieName, maxAge };
-
-    res.locals.contentIdxFormState.displayForm = !hasCookie;
+    const cookie = { name: cookieName, maxAge };
+    res.locals.displayForm = true;
     res.locals.contentIdxFormState.formId = surveyId;
-    res.locals.contentIdxFormState.hasUser = hasUser;
     res.locals.contentIdxFormState.cookie = cookie;
   }
 

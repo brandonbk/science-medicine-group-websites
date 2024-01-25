@@ -7,6 +7,7 @@ import CollapsibleSidebar from './collapsible-sidebar.vue';
 
 const ContentMeterTrack = () => import(/* webpackChunkName: "content-meter-tracker" */ './track-content-meter.vue');
 const GlobalRevealAdHandler = () => import(/* webpackChunkName: "reveal-ad-handler" */ './reveal-ad-handler.vue');
+const ContentAccess = () => import(/* webpackChunkName: "identity-x-content-access" */ './content-access.vue');
 
 export default (Browser) => {
   const { EventBus } = Browser;
@@ -17,6 +18,8 @@ export default (Browser) => {
   PhotoSwipe(Browser);
   Braze(Browser);
   Browser.register('CollapsibleSidebar', CollapsibleSidebar);
+
+  Browser.register('IdentityXContentAccess', ContentAccess, { provide: { EventBus } });
 
   // Rudderstack identification
   Browser.register('Rudderstack', Rudderstack, { provide: { EventBus } });
